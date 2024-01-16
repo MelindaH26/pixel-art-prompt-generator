@@ -1,5 +1,7 @@
 # Pixel Prompt - The Pixel Art Prompt Generator
 
+![alt text](https://github.com/MelindaH26/pixel-art-prompt-generator/blob/main/demo-screenshot.PNG?raw=true)
+
 ## Description
 This project was build as part of the CodeCademy Back-End Engineering course. I wanted to make a fun program to generate a prompt for when a pixel artist is stuck on what to draw.
 
