@@ -1,19 +1,33 @@
+html {
+    background: linear-gradient(180deg, rgba(2,8,23,1) 31%, rgba(42, 94, 146));
+    min-height: 100%;
+}
 html, p, button {
     font-family: 'Silkscreen', sans-serif;
 }
 
 body {
     text-align: center;
-    background-color: #2F5474;
+    overflow: hidden;
+}
+
+#main-content {
+    max-width: 900px;
+    margin: auto;
 }
 
 h1 {
     font-weight: 700;
     font-size: 55px;
     max-width: 600px;
-    margin: 40px auto;
+    margin: 80px auto 20px;
     color: #EE8F98;
-    text-shadow: 4px 4px 0px #000;
+    text-shadow: 2px 2px 0px #fff;
+}
+
+h2 {
+    font-size: 28px;
+    text-align: center;
 }
 
 p.intro-text {
@@ -23,12 +37,14 @@ p.intro-text {
 }
 
 button {
-    background-color: #EE8F98;
-    padding: 20px;
-    font-size: 20px;
-    border: 4px solid #000;
+    background-color: transparent;
+    padding: 15px;
+    font-size: 15px;
+    border: 2px solid #fff;
     cursor: pointer;
     transition: all .3s ease;
+    color: #fff;
+    box-shadow: 0px 0px 25px #000;
 }
 
 button:hover, #close:hover {
@@ -39,42 +55,43 @@ button:hover, #close:hover {
 }
 
 #prompt-container {
-    background-color: #fff;
-    border: 4px solid #000;
     max-width: 550px;
     padding: 70px 20px 30px;
     margin: 30px auto;
     display: none;
     position: relative;
+    color: #fff;
+    border: 1px solid #fff;
+    box-shadow: 0px 0px 30px #000;
+    text-align: left;
 }
 
 .top-bar {
     position: absolute;
-    top: -4px;
-    left: -4px;
-    width: 100%;
-    height: 48px;
-    background-color: #8bb5d9;
-    border: 4px solid #000;
-    border-bottom: 2px solid;
-    text-align: left;
+    top: 6px;
+    left: 6px;
+    width: calc(100% - 14px);
+    height: 38px;
+    border: 1px solid #fff;
 }
 
 .top-bar p {
     padding-left: 12px;
-    margin-top: 14px;
+    margin-top: 13px;
+    font-size: 12px;
 }
 
 #close {
     position: absolute;
-    top: 8px;
-    right: 8px;
+    top: 6px;
+    right: 6px;
     padding: 5px;
-    background-color: #EE8F98;
-    border: 2px solid #000;
-    width: 20px;
-    height: 20px;
+    border: 1px solid #fff;
+    width: 26px;
+    height: 28px;
+    font-size: 20px;
     cursor: pointer;
+    text-align: center;
     transition: all .3s ease;
 }
 
@@ -83,4 +100,78 @@ hr {
     height: 3px;
     background-color: #EE8F98;
     border: none;
+}
+
+.pixel-sparkle {
+    background: transparent;
+    height: 1px;
+    width: 1px;
+    color: white;
+    box-shadow: 
+        5px 0,
+        3px 1px,
+        1px 3px, 3px 3px, 5px 3px,
+        3px 5px;
+    transform: scale(3);
+    position: absolute;top: -10%;
+
+}
+
+@keyframes sparkle {
+    0% {box-shadow: 
+        5px 0,
+        3px 1px,
+        1px 3px, 3px 3px, 5px 3px,
+        3px 5px,
+        1px 6px transparent;
+    }
+    65% {box-shadow: 
+        5px 0 transparent,
+        3px 1px,
+        1px 3px, 3px 3px, 5px 3px,
+        3px 5px,
+        1px 6px transparent;
+    }
+    70% {box-shadow: 
+        5px 0 transparent,
+        3px 1px,
+        1px 3px, 3px 3px, 5px 3px,
+        3px 5px,
+        1px 6px;
+    }
+    100% {box-shadow: 
+        5px 0 transparent,
+        3px 1px,
+        1px 3px, 3px 3px, 5px 3px,
+        3px 5px,
+        1px 6px transparent;
+    }
+}
+
+@keyframes move {
+    from {top: -20px;}
+    to {top: calc(100% + 20px);}
+}
+
+/* positioning sparkles */
+/* .header {
+    position: relative;
+} */
+.sparkle-1 {
+    /* top: 40px; */
+    left: 15%;
+    animation: sparkle 1.5s infinite, move 19s infinite linear;
+    transform: rotate(270deg) scale(2) translateZ(0);
+}
+.sparkle-2 {
+    /* top: 20px; */
+    right: 15%;
+    animation: sparkle 2s infinite, move 12s infinite linear;
+    transform: translateZ(0) scale (3);
+}
+.sparkle-3 {
+    /* bottom: 20px; */
+    left: 25%;
+    animation: sparkle 3s infinite, move 9s infinite linear;
+    transform: rotate(90deg) scale(3) translateZ(0);
 }
