@@ -8,7 +8,6 @@ html, p, button {
 
 body {
     text-align: center;
-    overflow: hidden;
 }
 
 #main-content {
@@ -95,15 +94,9 @@ button:hover, #close:hover {
     transition: all .3s ease;
 }
 
-hr {
-    max-width: 35px;
-    height: 3px;
-    background-color: #EE8F98;
-    border: none;
-}
-
 .pixel-sparkle {
     background: transparent;
+    position: fixed;
     height: 1px;
     width: 1px;
     color: white;
@@ -113,7 +106,7 @@ hr {
         1px 3px, 3px 3px, 5px 3px,
         3px 5px;
     transform: scale(3);
-    position: absolute;top: -10%;
+    top: -10%;
 
 }
 
@@ -154,9 +147,6 @@ hr {
 }
 
 /* positioning sparkles */
-/* .header {
-    position: relative;
-} */
 .sparkle-1 {
     /* top: 40px; */
     left: 15%;
@@ -174,4 +164,11 @@ hr {
     left: 25%;
     animation: sparkle 3s infinite, move 9s infinite linear;
     transform: rotate(90deg) scale(3) translateZ(0);
+}
+
+#logo {
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    filter: drop-shadow(4px 3px 3px black);
 }
